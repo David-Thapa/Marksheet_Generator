@@ -10,6 +10,6 @@ int main()
     while(menuStart)
     {
         system("clear");
-        menuStart = menu();
+        menuStart = Menu();
     }
 }

@@ -2,7 +2,7 @@
 #include"admin.cpp"
 using namespace std;
 
-bool menu()
+bool Menu()
 {
     int choice;
     cout<<"1. Search Student.\n2. Admin.\n3. Exit"<<endl;
@@ -14,7 +14,7 @@ bool menu()
         return true;
 
         case 2:
-        admin();
+        Admin();
         return true;
 
         case 3:

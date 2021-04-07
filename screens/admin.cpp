@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void admin()
+void Admin()
 {
     bool logedIn = true;
     int choice;
