@@ -1,5 +1,7 @@
 #include<iostream>
 #include"admin.cpp"
+#include"search.cpp"
+
 using namespace std;
 
 bool Menu()
@@ -11,6 +13,7 @@ bool Menu()
     switch(choice)
     {
         case 1:
+        Search();
         return true;
 
         case 2:
