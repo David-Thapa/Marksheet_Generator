@@ -13,10 +13,12 @@ bool Menu()
     switch(choice)
     {
         case 1:
+        system("clear");
         Search();
         return true;
 
         case 2:
+        
         Admin();
         return true;
 
