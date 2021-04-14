@@ -1,46 +1,29 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-
 using namespace std;
 
-class CSV
+void show(string fileName)
 {
-    fstream file;  
-    string fileName;
-    public:
-    CSV()
-    {
-        cin.ignore();
-        cout<<"\t\tName of the student\n\t\t: ";
-        getline(cin,fileName);
-    }
+    fstream file; 
+    char data;
+    file.open(fileName + ".txt",ios::in);
 
-    void show()
+    while(file>>noskipws>>data)
     {
-        char data;
-        
-        file.open(fileName + ".txt",ios::in);
-
-        while(file>>noskipws>>data)
-        {
-            cout<<data;
-        }
-        
+        cout<<data;
     }
+    file.close();  
+}
 
-    ~CSV()
-    {
-        file.close();
-    }
-    
-};
 
 void Search()
 {
-    CSV searchMarksheet;
-
-    searchMarksheet.show();
+    string fileName;
+    cin.ignore();
+    cout<<"\t\tName of the student\n\t\t: ";
+    getline(cin,fileName);
+    show(fileName);
     system("pause");
 }
 

@@ -7,13 +7,9 @@ using namespace std;
 
 class Marksheet
 {
-    string subject = "Statistics";
-    string name,rollNo;
-    int choice;
-    int fullMarks = 100;
-    int marksObtained = 40;
-    string remarks = (marksObtained < 40)? "Fail" : "Pass";
-    string Remarks;
+    string name, rollNo, remarks[50], subject[50];
+    int marksObtained[50], choice;
+    const int fullMarks = 100;
     int fullMarksTotal = 0,totalMarks = 0,count = 0;
     fstream file;
     public:
@@ -26,7 +22,15 @@ class Marksheet
         cin>>rollNo;
         cout<<"How many subject:";
         cin>>choice;
-        // cout<<"Enter the name of Subject and Marks: ";
+        for (int i = 0; i < choice; i++)
+        {
+            cin.ignore();
+            cout<<"Enter the name of "<<i+1<<" Subject: ";
+            getline(cin,subject[i]);
+            cout<<"Enter Marks obtahined: ";
+            cin>>marksObtained[i];
+            remarks[i] = (marksObtained[i] < 40)? "Fail" : "Pass";
+        }
     }
     void create()
     {
@@ -49,31 +53,30 @@ class Marksheet
         {
             
             file<<"\t\t|"<<"      "<<setw(4)<<i+1;
-            if(subject.size() < 14)
-            {
-                file<<"    "<<setw(18)<<subject;
-            }
-            else
-            {
-                file<<setw(22)<<subject;
-            }
+            
+                file<<"    "<<setw(18)<<subject[i];
+            
             file<<"    "<<setw(12)<<fullMarks
-            <<"     "<<setw(11)<<marksObtained
-            <<"     "<<setw(10)<<remarks<<"|"<<endl;
-            totalMarks += marksObtained;
+            <<"     "<<setw(11)<<marksObtained[i]
+            <<"     "<<setw(10)<<remarks[i]<<"|"<<endl;
+            totalMarks += marksObtained[i];
             fullMarksTotal += fullMarks;
-            (remarks == "Pass")? count++ : count;
+            (remarks[i] == "Pass")? count++ : '\0';
         }
         file<<"\t\t|"<<setw(14)<<" "
         <<setw(17)<<"Grand Total"
         <<"     "<<setw(11)<<fullMarksTotal
         <<"     "<<setw(11)<<totalMarks
-        <<"      "<<setw(10)<<((count == 4)?"Passed":"Failed")<<"|"<<endl
+        <<"      "<<setw(10)<<((count == choice)?"Passed":"Failed")<<"|"<<endl
         <<"\t\t|"<<setw(80)<<right<<"|"<<endl
         <<"\t\t "<<setfill('-')<<setw(79)<<"-"<<setfill(' ')<<endl;
         file.close();
     }
 
+    void update()
+    {
+
+    }
 };
 
 void Admin()
@@ -97,6 +100,7 @@ void Admin()
             break;
 
             case 2:
+            marksheet.update();
             logedIn = true;
             break;
 

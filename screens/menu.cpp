@@ -18,7 +18,6 @@ bool Menu()
         return true;
 
         case 2:
-        
         Admin();
         return true;
 
