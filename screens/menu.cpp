@@ -1,10 +1,11 @@
 #include<iostream>
+#include<string>
 #include"admin.cpp"
 #include"search.cpp"
 
 using namespace std;
 
-bool Menu()
+bool Menu(string &password)
 {
     int choice;
     cout<<"1. Search Student.\n2. Admin.\n3. Exit"<<endl;
@@ -18,7 +19,8 @@ bool Menu()
         return true;
 
         case 2:
-        Admin();
+        system("clear");
+        Admin(password);
         return true;
 
         case 3:

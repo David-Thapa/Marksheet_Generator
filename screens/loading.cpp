@@ -1,15 +1,19 @@
 #include<iostream>
+#include<fstream>
 #include<thread>
 #include<windows.h>
 #include"menu.cpp"
 
 using namespace std;
 
-void InitialFetch()
+string Password = "";
+
+void initState()
 {
-    //Waited for the value
-    Sleep(2000);
-    cout<<"Data Fetched";
+    ifstream password("password.txt");
+    char p;
+    getline(password,Password);
+    password.close();
 }
 
 class Loading
@@ -22,13 +26,13 @@ class Loading
 
 void Loading :: start()
 {
-    thread t1(InitialFetch);
+    thread t1(initState);
     loading();
     t1.join();
     while(menuStart)
     {
         system("cls");
-        menuStart = Menu();
+        menuStart = Menu(Password);
     }
 }
 
