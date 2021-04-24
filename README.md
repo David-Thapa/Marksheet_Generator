@@ -21,21 +21,21 @@ This project is made by using C++ programming language in a simple way which is 
 
 ## PROGRAM STRUCTURE
 
-![Tux, the Linux mascot](/assets/images/Blockdiagram.png)
+![Tux, the Linux mascot](/assets/Blockdiagram.png)
 
 The key of the program is the main function. When main function gets executed it calls Loading function from different section of files and When Loading function is called, it perform's some operation and so on next function gets called.
 
 Menu section of program consist all the features that this project has.
 1. Search function will allow user's to view the Mark sheet. We need to provide specific name of the **Student** or their **Roll No**. By doing so a Marksheet will appear as
-![Tux, the Linux mascot](/assets/images/marksheet.png)
+![Tux, the Linux mascot](/assets/marksheet.png)
 2. Every action required for manipulating marksheet is found in Admin function.
 - Create function :- For New Mark sheet
 - Delete function :- To Delete Mark sheet
 - List function :- To Summarize available Student
-![Tux, the Linux mascot](/assets/images/list.png)
+![Tux, the Linux mascot](/assets/list.png)
 
-> For Accesing Admin, one has to pass through authentication. The password is **"Project123"**
+> For Accesing Admin, one has to pass through authentication. The password is **"Project123"**. In order to change password, rewrite the text in password.txt.
 
 ## Conclusion
-	At last, we became successful to create the project MarkSheet-Generator. And we’ve complied and tested successfully. We have gained a lot of knowledge of Object Oriented programming and It was a wonderful learning experience for us while working on this project.
+At last, we became successful to create the project MarkSheet-Generator. And we’ve complied and tested successfully. We have gained a lot of knowledge of Object Oriented programming and It was a wonderful learning experience for us while working on this project.
 
