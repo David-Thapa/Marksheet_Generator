@@ -27,12 +27,12 @@ The key of the program is the main function. When main function gets executed it
 
 Menu section of program consist all the features that this project has.
 1. Search function will allow user's to view the Mark sheet. We need to provide specific name of the **Student** or their **Roll No**. By doing so a Marksheet will appear as
-![Tux, the Linux mascot](/assets/images/Marksheet.png)
+![Tux, the Linux mascot](/assets/images/marksheet.png)
 2. Every action required for manipulating marksheet is found in Admin function.
 - Create function :- For New Mark sheet
 - Delete function :- To Delete Mark sheet
 - List function :- To Summarize available Student
-![Tux, the Linux mascot](/assets/images/List.png)
+![Tux, the Linux mascot](/assets/images/list.png)
 
 > For Accesing Admin, one has to pass through authentication. The password is **"Project123"**
 
